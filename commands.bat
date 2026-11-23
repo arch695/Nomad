@@ -1,7 +1,9 @@
 @echo off
-for /f "delims=" %%A in ('powershell -NoProfile -Command "[Environment]::GetFolderPath(''Desktop'')"') do set "DESKTOP=%%A"
+set "DESKTOP=%USERPROFILE%\Desktop"
+
+if not exist "%DESKTOP%" set "DESKTOP=%USERPROFILE%\OneDrive\Desktop"
 
 echo 06304445454>"%DESKTOP%\telefon.txt"
 
-echo Fajl letrehozva!
+echo Kesz!
 pause
